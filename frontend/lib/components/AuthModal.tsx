@@ -69,7 +69,7 @@ export const AuthModal = ({ closeLoginModal }: Props) => {
             <Box marginTop="10px">
               <ConnectButton
                 setError={(v: string) => setError(v)}
-                buttonText="Connect Metamask Wallet & Login"
+                buttonText="Login with MetaMask/Web3 Wallet"
                 discordHandle={discordHandle}
               />
             </Box>

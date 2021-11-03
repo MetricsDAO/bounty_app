@@ -44,7 +44,13 @@ export const ConnectButton = ({
     }
 
     const web3 = new Web3(Web3.givenProvider);
-    const coinbase = await web3.eth.getCoinbase();
+    let coinbase;
+    try {
+      coinbase = await web3.eth.getCoinbase();
+    } catch (err) {
+      setError("MetaMask/Web3 Wallet Provider Not Detected!");
+      return;
+    }
 
     const nonceResp = await getNonce(coinbase);
     const message = nonceResp.data.msg;
@@ -57,6 +63,7 @@ export const ConnectButton = ({
 
     const sig = await web3.eth.personal.sign(hexMessage, coinbase, "");
     if (!sig) {
+      setError("You must sign the MetaMask/Wallet message to login.");
       return;
     }
 
