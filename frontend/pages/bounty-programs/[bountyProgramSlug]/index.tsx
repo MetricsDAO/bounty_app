@@ -21,7 +21,7 @@ const BountyPrograms: NextPage = () => {
     setCounter(1);
     setTimeout(() => {
       setCounter(2);
-    });
+    }, 50);
   }
 
   const bountyProgram = bountyProgramStore.getBySlug(bountyProgramSlug);
@@ -48,7 +48,7 @@ const BountyPrograms: NextPage = () => {
         </Text>
       </Box>
       <Box>
-        {(counter == 0 || counter == 2) && (
+        {counter != 1 && (
           <CannyWidget boardToken={bountyProgram.bountyProgramID} />
         )}
       </Box>
