@@ -1,0 +1,38 @@
+version: "3.4"
+
+volumes:
+  metricsdao_postgres_data:
+    driver: local
+
+services:
+  metricsdao_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - ENVIRONMENT=${ENVIRONMENT:-local}
+        - ENV=${ENV:-local}
+        - VERSION=${VERSION-}
+    user: root
+    ports:
+      - 8002:80
+    command: /start-reload.sh
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    links:
+      - metricsdao_postgres_db
+    depends_on:
+      - metricsdao_postgres_db
+
+  metricsdao_postgres_db:
+    image: postgres:11.1
+    ports:
+      - 5419:5432
+    volumes:
+      - metricsdao_postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: metricsdao
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
