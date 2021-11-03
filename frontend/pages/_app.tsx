@@ -16,6 +16,19 @@ import { Header } from "../lib/components/Header";
 import { Footer } from "../lib/components/Footer";
 import { DAppProvider } from "@usedapp/core";
 
+import * as Sentry from "@sentry/react";
+import { Integrations } from "@sentry/tracing";
+
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  integrations: [new Integrations.BrowserTracing()],
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+});
+
 const queryClient = new QueryClient();
 
 // @ts-ignore
