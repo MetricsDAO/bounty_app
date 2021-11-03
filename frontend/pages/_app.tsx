@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-// import { ThemeProvider } from "theme-ui";
 import {
   ChakraProvider,
   Container,
@@ -15,19 +14,6 @@ import "../styles/globals.css";
 import { Header } from "../lib/components/Header";
 import { Footer } from "../lib/components/Footer";
 import { DAppProvider } from "@usedapp/core";
-
-import * as Sentry from "@sentry/react";
-import { Integrations } from "@sentry/tracing";
-
-Sentry.init({
-  dsn: process.env.SENTRY_DSN,
-  integrations: [new Integrations.BrowserTracing()],
-
-  // Set tracesSampleRate to 1.0 to capture 100%
-  // of transactions for performance monitoring.
-  // We recommend adjusting this value in production
-  tracesSampleRate: 1.0,
-});
 
 const queryClient = new QueryClient();
 
@@ -58,30 +44,6 @@ function MyApp({ Component, pageProps }) {
                 content="https://bounty.metricsdao.xyz"
               />
               <link rel="icon" href="/logos/color-mark@2x.png" />
-              <link
-                rel="preload"
-                href="/fonts/Libre_Barcode_128_Text/LibreBarcode128Text-Regular.ttf"
-                as="font"
-                crossOrigin=""
-              />
-              <link
-                rel="preload"
-                href="/fonts/AllertaStencil/AllertaStencil-Regular.ttf"
-                as="font"
-                crossOrigin=""
-              />
-              <link
-                rel="preload"
-                href="/fonts/SimplicityShadow/SimplicityShadow-Regular.ttf"
-                as="font"
-                crossOrigin=""
-              />
-              <link
-                rel="preload"
-                href="/fonts/RetroNewVersion/RetroNewVersion.otf"
-                as="font"
-                crossOrigin=""
-              />
               <script
                 async
                 src="https://www.googletagmanager.com/gtag/js?id=G-M0Z5D6P7XG"
