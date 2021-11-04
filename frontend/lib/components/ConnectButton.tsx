@@ -45,7 +45,12 @@ export const ConnectButton = ({
       return;
     }
     if (!account) {
-      const connectResult = await activateBrowserWallet();
+      try {
+        const connectResult = await activateBrowserWallet();
+      } catch (err) {
+        setError("MetaMask/Web3 Wallet Could Not Be Activated!");
+        return;
+      }
     }
 
     if (isAuthenticated) {
@@ -72,7 +77,14 @@ export const ConnectButton = ({
     var hexMessage = "0x" + hex;
 
     mixpanel.track("wallet:auth:start", { address: coinbase });
-    const sig = await web3.eth.personal.sign(hexMessage, coinbase, "");
+    let sig;
+    try {
+      sig = await web3.eth.personal.sign(hexMessage, coinbase, "");
+    } catch (err) {
+      setError("You must sign the MetaMask/Wallet message to login.");
+      return;
+    }
+
     if (!sig) {
       mixpanel.track("wallet:auth:failed", { address: coinbase });
       setError("You must sign the MetaMask/Wallet message to login.");

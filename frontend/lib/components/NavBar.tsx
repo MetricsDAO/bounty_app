@@ -16,7 +16,7 @@ import {
 import { useUserStore } from "../stores/UserStore";
 import { FiLogOut } from "react-icons/fi";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { destroyCookie } from "nookies";
+import { destroyCookie, setCookie } from "nookies";
 
 type Props = {
   openLoginModal: () => void;
@@ -29,7 +29,11 @@ export const NavBar = ({ openLoginModal }: Props) => {
   const userStore = useUserStore();
   const handleLogout = async () => {
     console.log("log out");
-    await destroyCookie(null, "Authorization");
+    await setCookie(null, "Authorization", "", {
+      maxAge: 365 * 24 * 60 * 60, // one year
+      path: "/",
+    });
+    await destroyCookie({}, "Authorization");
     window.location.assign("/");
   };
   return (
