@@ -61,7 +61,7 @@ const BountyPrograms: NextPage = () => {
         borderRadius="4px"
       >
         <Heading fontSize="lg" fontFamily="mono">
-          🕵️‍♀️ {bountyProgram.name} Bounty Questions
+          🕵️‍♀️ {bountyProgram.name} Bounty Question Proposals
         </Heading>
         <Text fontFamily="mono" fontSize="sm">
           <br />A space to propose and gather questions relevant to{" "}
