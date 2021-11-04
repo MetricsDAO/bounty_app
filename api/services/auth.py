@@ -2,13 +2,14 @@ import jwt
 from sqlalchemy.orm import session
 
 from core.environment import JWT_SECRET
+from utils.canny import clean_discord_handle
 from models import User
 
 
 def create_jwt(user_id, public_address, discord_handle):
     user_data = {
         'avatarURL': None, # optional, but preferred
-        'email': f'{discord_handle}+external-signup@bounty.metricsdao.xyz',
+        'email': f'{clean_discord_handle(discord_handle)}+external-signup@bounty.metricsdao.xyz',
         'id': str(user_id),
         'name': discord_handle,
         "customFields": {

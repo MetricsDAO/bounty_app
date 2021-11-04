@@ -1,0 +1,29 @@
+
+
+def clean_discord_handle(handle):
+    return handle.\
+        replace("#", '').\
+        replace("@", '').\
+        replace("/", '').\
+        replace("!", '').\
+        replace("%", '').\
+        replace("(", '').\
+        replace(")", '').\
+        replace("^", '').\
+        replace("[", '').\
+        replace("]", '').\
+        replace("{", '').\
+        replace("}", '').\
+        replace("|", '').\
+        replace("~", '').\
+        replace("`", '').\
+        replace("'", '').\
+        replace('"', '').\
+        replace(';', '').\
+        replace(':', '').\
+        replace('+', '').\
+        replace('=', '').\
+        replace('*', '').\
+        replace('>', '').\
+        replace('<', '').\
+        replace(',', '')
