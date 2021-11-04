@@ -28,12 +28,9 @@ export const NavBar = ({ openLoginModal }: Props) => {
   const [isLessThan700] = useMediaQuery("(max-width: 700px)");
   const userStore = useUserStore();
   const handleLogout = async () => {
-    console.log("log out");
-    await setCookie(null, "Authorization", "", {
-      maxAge: 365 * 24 * 60 * 60, // one year
+    await destroyCookie({}, "Authorization", {
       path: "/",
     });
-    await destroyCookie({}, "Authorization");
     window.location.assign("/");
   };
   return (
