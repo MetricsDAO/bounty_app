@@ -1,10 +1,8 @@
-import { Box, Container } from "@chakra-ui/layout";
+import { Container } from "@chakra-ui/layout";
 import { Flex } from "@chakra-ui/layout";
 import { useRouter } from "next/router";
-
 import React, { useEffect, useState } from "react";
 
-// import mixpanel from "mixpanel-browser";
 import { useUserStore } from "../stores/UserStore";
 import { Logo } from "./Logo";
 import { NavBar } from "./NavBar";
@@ -12,20 +10,6 @@ import { AuthModal } from "./AuthModal";
 
 type Props = {};
 export function Header(props: Props) {
-  // useEffect(() => {
-  //   // track click for link id #nav
-  //   mixpanel.track_links("#jim_twitter", "link_click:jim_twitter", {
-  //     location: "nav",
-  //   });
-  //   mixpanel.track_links(
-  //     "#flipsidecrypto_link",
-  //     "link_click:flipsidecrypto_velocity_signup",
-  //     {
-  //       location: "nav",
-  //     }
-  //   );
-  // }, []);
-
   const userStore = useUserStore();
   useEffect(() => {
     userStore.hydrateFromServer();

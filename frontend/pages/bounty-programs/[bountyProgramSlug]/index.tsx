@@ -5,7 +5,8 @@ import { useRouter } from "next/dist/client/router";
 import { stringify } from "query-string";
 import { useBountyProgramStore } from "../../../lib/stores/BountyProgramsStore";
 import { useUserStore } from "../../../lib/stores/UserStore";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import mixpanel from "mixpanel-browser";
 
 const BountyPrograms: NextPage = () => {
   const router = useRouter();
@@ -13,8 +14,15 @@ const BountyPrograms: NextPage = () => {
   const [counter, setCounter] = useState<number>(0);
   const userStore = useUserStore();
   const bountyProgramSlug = router.query.bountyProgramSlug;
+
+  useEffect(() => {
+    mixpanel.track("page_view:bounty_programs:questions:individual", {
+      bountyProgram: bountyProgramSlug,
+    });
+  }, []);
+
   if (!bountyProgramSlug) {
-    return <div>No Bounty Program found</div>;
+    return <></>;
   }
 
   if (userStore.isAuthenticated && counter == 0) {
@@ -25,6 +33,11 @@ const BountyPrograms: NextPage = () => {
   }
 
   const bountyProgram = bountyProgramStore.getBySlug(bountyProgramSlug);
+  if (!bountyProgram) {
+    window.location.assign("/");
+    return <></>;
+  }
+
   return (
     <Box width="100%">
       <Box

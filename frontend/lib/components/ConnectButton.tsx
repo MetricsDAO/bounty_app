@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, useToast } from "@chakra-ui/react";
 import { useEthers } from "@usedapp/core";
 import Web3 from "web3";
@@ -6,11 +6,20 @@ import Web3 from "web3";
 import { getNonce, authenticateUser } from "../api";
 import { setCookie, parseCookies } from "nookies";
 import { useUserStore } from "../stores/UserStore";
+import { mpRegisterUser } from "../utils/mp";
+import mixpanel from "mixpanel-browser";
 
 type Props = {
   buttonText?: string;
   discordHandle: string;
   setError: (v: string) => void;
+};
+
+const getUser = async (userStore: any) => {
+  const userData = await userStore.hydrateFromServer();
+  if (userStore.discord_handle) {
+    mpRegisterUser(userData);
+  }
 };
 
 export const ConnectButton = ({
@@ -26,10 +35,11 @@ export const ConnectButton = ({
 
   useEffect(() => {
     setAuthenticated(parseCookies()["Authorization"] ? true : false);
-    userStore.hydrateFromServer();
+    getUser(userStore);
   }, []);
 
   async function handleConnectWallet() {
+    mixpanel.track("wallet:click_connect", {});
     if (!discordHandle) {
       setError("Discord Handle Required to Login!");
       return;
@@ -61,8 +71,10 @@ export const ConnectButton = ({
     }
     var hexMessage = "0x" + hex;
 
+    mixpanel.track("wallet:auth:start", { address: coinbase });
     const sig = await web3.eth.personal.sign(hexMessage, coinbase, "");
     if (!sig) {
+      mixpanel.track("wallet:auth:failed", { address: coinbase });
       setError("You must sign the MetaMask/Wallet message to login.");
       return;
     }
@@ -74,7 +86,8 @@ export const ConnectButton = ({
     });
 
     setAuthenticated(true);
-    userStore.hydrateFromServer();
+    await getUser(userStore);
+    mixpanel.track("wallet:auth:succeeded", { address: coinbase });
     toast({
       title: `Sup, ${discordHandle} 😎`,
       description: "We've gone ahead and signed you in.",

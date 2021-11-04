@@ -17,11 +17,11 @@ const programs = [
     slug: "olympus-dao",
     bountyProgramID: "82b792af-3d61-3cc8-9c7e-317438dc45c0",
   },
-  {
-    name: "Harmony",
-    slug: "harmony",
-    bountyProgramID: "5a386b06-ae74-90a3-b740-959850b2275b",
-  },
+  // {
+  //   name: "Harmony",
+  //   slug: "harmony",
+  //   bountyProgramID: "5a386b06-ae74-90a3-b740-959850b2275b",
+  // },
 ];
 
 export const useBountyProgramStore = create<BountyProgramState>((set) => ({
