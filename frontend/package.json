@@ -13,6 +13,7 @@
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@sentry/nextjs": "^6.14.0",
+    "@types/mixpanel-browser": "^2.35.7",
     "@usedapp/core": "^0.5.1",
     "axios": "^0.21.1",
     "framer-motion": "^5.0.2",
