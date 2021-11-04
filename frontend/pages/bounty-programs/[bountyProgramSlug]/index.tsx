@@ -73,7 +73,14 @@ const BountyPrograms: NextPage = () => {
           See a question you want answered? Upvote it! The top 10 up-voted
           questions will make it into the next bounty round.
         </Text>
-        <Button marginTop="15px" variant="secondary" onClick={onOpen}>
+        <Button
+          marginTop="15px"
+          variant="secondary"
+          onClick={() => {
+            mixpanel.track("click:bounty_question_tips");
+            onOpen();
+          }}
+        >
           🤔 How to Write a Good Question (click me to learn) 🤔
         </Button>
       </Box>
