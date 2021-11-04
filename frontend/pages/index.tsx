@@ -53,12 +53,7 @@ const BountyPrograms: NextPage = () => {
           let url = `/bounty-programs/${b.slug}`;
           return (
             <Box key={i} marginBottom="5px">
-              <Link
-                href={url}
-                color="rgb(63, 81, 181)"
-                fontSize="3xl"
-                fontFamily="'Allerta Stencil',sans-serif"
-              >
+              <Link href={url} color="rgb(63, 81, 181)" fontSize="3xl">
                 {i + 1}. {b.name}
               </Link>
             </Box>
