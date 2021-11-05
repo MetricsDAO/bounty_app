@@ -2,3 +2,4 @@
 # imported by Alembic
 from db.base_class import Base 
 from models.user import User
+from models.webhook_event_canny import WebhookEventCanny
