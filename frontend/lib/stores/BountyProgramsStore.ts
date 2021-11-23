@@ -20,7 +20,7 @@ const programs = [
   {
     name: "Harmony",
     slug: "harmony",
-    bountyProgramID: "16b49c12-cf07-0df5-c5b0-c7cdcfe12eb5",
+    bountyProgramID: "16b49c12-cf07-0df5-c5b0-c7cdcfe12eb5", // canny id
   },
 ];
 
