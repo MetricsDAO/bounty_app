@@ -22,6 +22,11 @@ const programs = [
     slug: "harmony",
     bountyProgramID: "16b49c12-cf07-0df5-c5b0-c7cdcfe12eb5", // canny id
   },
+  {
+    name: "Terra",
+    slug: "terra",
+    bountyProgramID: "1ec1f4c8-7573-aa71-d061-734184c61efd",
+  },
 ];
 
 export const useBountyProgramStore = create<BountyProgramState>((set: any) => ({
