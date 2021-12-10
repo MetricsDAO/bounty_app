@@ -1,7 +1,7 @@
 
 
 def clean_discord_handle(handle):
-    return handle.\
+    return handle.strip().\
         replace("#", '').\
         replace("@", '').\
         replace("/", '').\
@@ -26,4 +26,5 @@ def clean_discord_handle(handle):
         replace('*', '').\
         replace('>', '').\
         replace('<', '').\
+        replace(' ', '').\
         replace(',', '')
