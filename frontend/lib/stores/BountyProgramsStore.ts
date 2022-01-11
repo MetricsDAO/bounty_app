@@ -27,6 +27,11 @@ const programs = [
     slug: "terra",
     bountyProgramID: "1ec1f4c8-7573-aa71-d061-734184c61efd",
   },
+  {
+    name: "Convex",
+    slug: "convex",
+    bountyProgramID: "714fe9bc-60de-4d9a-f19a-a8f5c20c3bde",
+  },
 ];
 
 export const useBountyProgramStore = create<BountyProgramState>((set: any) => ({
