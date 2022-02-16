@@ -32,6 +32,11 @@ const programs = [
     slug: "convex",
     bountyProgramID: "714fe9bc-60de-4d9a-f19a-a8f5c20c3bde",
   },
+  {
+    name: "Uniswap",
+    slug: "uniswap",
+    bountyProgramID: "f6d8778a-6f1d-b643-5661-b1ca97f391ed",
+  },
 ];
 
 export const useBountyProgramStore = create<BountyProgramState>((set: any) => ({
