@@ -37,6 +37,11 @@ const programs = [
     slug: "uniswap",
     bountyProgramID: "f6d8778a-6f1d-b643-5661-b1ca97f391ed",
   },
+  {
+    name: "Workshop Suggestions",
+    slug: "workshop-suggestions",
+    bountyProgramID: "f4d6f311-3853-2b7b-a492-07e9608efe19",
+  },
 ];
 
 export const useBountyProgramStore = create<BountyProgramState>((set: any) => ({
