@@ -37,6 +37,11 @@ const programs = [
     slug: "uniswap",
     bountyProgramID: "f6d8778a-6f1d-b643-5661-b1ca97f391ed",
   },
+  {
+    name: "True Freeze",
+    slug: "true-freeze",
+    bountyProgramID: "24c602b5-a202-9c05-4465-5b0d37132401",
+  },
 ];
 
 export const useBountyProgramStore = create<BountyProgramState>((set: any) => ({
