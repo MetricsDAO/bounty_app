@@ -13,29 +13,24 @@ export interface BountyProgramState {
 
 const programs = [
   {
-    name: "Olympus DAO",
-    slug: "olympus-dao",
-    bountyProgramID: "82b792af-3d61-3cc8-9c7e-317438dc45c0",
-  },
-  {
     name: "Harmony",
     slug: "harmony",
     bountyProgramID: "16b49c12-cf07-0df5-c5b0-c7cdcfe12eb5", // canny id
   },
   {
-    name: "Terra",
-    slug: "terra",
-    bountyProgramID: "1ec1f4c8-7573-aa71-d061-734184c61efd",
+    name: "Aave v3",
+    slug: "aave-v3",
+    bountyProgramID: "9f550aff-5d3e-053a-8034-33df6573d9cd",
   },
   {
-    name: "Convex",
-    slug: "convex",
-    bountyProgramID: "714fe9bc-60de-4d9a-f19a-a8f5c20c3bde",
+    name: "Biconomy",
+    slug: "biconomy",
+    bountyProgramID: "c1f62581-dc7b-125a-6f35-1bfb0ee89215",
   },
   {
-    name: "Uniswap",
-    slug: "uniswap",
-    bountyProgramID: "f6d8778a-6f1d-b643-5661-b1ca97f391ed",
+    name: "Bancor v3",
+    slug: "bancor-v3",
+    bountyProgramID: "588a1f50-40f3-3b23-be33-35c49a39721f",
   },
   {
     name: "True Freeze",
