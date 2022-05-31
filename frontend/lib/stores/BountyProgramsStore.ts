@@ -37,6 +37,21 @@ const programs = [
     slug: "true-freeze",
     bountyProgramID: "24c602b5-a202-9c05-4465-5b0d37132401",
   },
+  {
+    name: "Nouns DAO",
+    slug: "nouns-dao",
+    bountyProgramID: "fad83cf2-c77d-9d46-2e7e-744ee3fa8bfe",
+  },
+  {
+    name: "UMA Protocol",
+    slug: "uma-protocol",
+    bountyProgramID: "6f693a02-7be2-5698-6feb-989a2d244d1c",
+  },
+  {
+    name: "NEAR",
+    slug: "near",
+    bountyProgramID: "fad867cb-c0d2-79ce-c961-906062903f45",
+  },
 ];
 
 export const useBountyProgramStore = create<BountyProgramState>((set: any) => ({
