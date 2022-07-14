@@ -54,7 +54,7 @@ const BountyPrograms: NextPage = () => {
           return (
             <Box key={i} marginBottom="5px">
               <Link href={url} color="rgb(63, 81, 181)" fontSize="3xl">
-                {i + 1}. {b.name}
+                {b.name}
               </Link>
             </Box>
           );
