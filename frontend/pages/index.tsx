@@ -26,14 +26,14 @@ const BountyPrograms: NextPage = () => {
         borderRadius="4px"
       >
         <Heading fontSize="lg" fontFamily="mono">
-          🙋‍♀️ Bounty Programs - Question Sourcing
+          🙋‍♀️ Community Brainstorming
         </Heading>
         <Text fontFamily="mono" fontSize="sm">
           <br />
-          The following are active Bounty Programs the Metrics DAO is collecting
+          The following are active Bounty Programs MetricsDAO is collecting
           questions for. Click on a Bounty Program below to begin submiting
           questions and upvoting existing submissions. Anyone can participate &
-          earn rewards!
+          earn xMETRIC rewards!
         </Text>
         <br />
         <Link
