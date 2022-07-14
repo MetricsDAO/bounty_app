@@ -67,11 +67,10 @@ const BountyPrograms: NextPage = () => {
           <br />A space to propose and gather questions relevant to{" "}
           {bountyProgram.name}. What do you want to know about{" "}
           {bountyProgram.name}? Questions defined, and ranked here will form the
-          basis of future Bounty Rounds by the MetricsDAO!
+          basis of future Analytics Bounties by MetricsDAO!
           <br />
           <br />
-          See a question you want answered? Upvote it! The top 10 up-voted
-          questions will make it into the next bounty round.
+          See a question you want answered? Upvote it! 
         </Text>
         <Button
           marginTop="15px"
