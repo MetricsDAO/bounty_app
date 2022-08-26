@@ -27,6 +27,11 @@ const programs = [
     name: "Hacks, Scandals and Scams",
     slug: "hacks-scandals-and-scams",
     bountyProgramID: "08274d93-6dba-cba6-5e27-926674c774ec",
+  },
+  {
+    name: "MakerDAO",
+    slug: "maker-dao",
+    bountyProgramID: "eeb61fca-43f0-6cd6-cefc-6fcdd13342ba",
   }
 ];
 
