@@ -32,6 +32,11 @@ const programs = [
     name: "MakerDAO",
     slug: "maker-dao",
     bountyProgramID: "eeb61fca-43f0-6cd6-cefc-6fcdd13342ba",
+  },
+  {
+    name: "Goldfinch",
+    slug: "goldfinch",
+    bountyProgramID: "c1af1118-3163-a6b3-4b67-fc73ef7ff008",
   }
 ];
 
