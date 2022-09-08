@@ -39,7 +39,7 @@ const programs = [
     bountyProgramID: "c1af1118-3163-a6b3-4b67-fc73ef7ff008",
   },
   {
-    name: "Report Plagiarims",
+    name: "Report Plagiarism",
     slug: "report-submission",
     bountyProgramID: "49927eef-fe6e-c39b-f1e6-012ab4bb9a2d",
   },
