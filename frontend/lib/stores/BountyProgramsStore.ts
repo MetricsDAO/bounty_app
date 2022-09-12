@@ -4,6 +4,9 @@ export interface BountyProgram {
   name: string;
   slug: string;
   bountyProgramID: string;
+  customTitle?: string;
+  customDescription?: string;
+  customHint?: string;
 }
 export interface BountyProgramState {
   programs: BountyProgram[];
@@ -12,7 +15,6 @@ export interface BountyProgramState {
 }
 
 const programs = [
-  
   {
     name: "Aave v3",
     slug: "aave-v3",
@@ -37,7 +39,7 @@ const programs = [
     name: "Goldfinch",
     slug: "goldfinch",
     bountyProgramID: "c1af1118-3163-a6b3-4b67-fc73ef7ff008",
-  }
+  },
 ];
 
 export const useBountyProgramStore = create<BountyProgramState>((set: any) => ({

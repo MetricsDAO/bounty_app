@@ -12,6 +12,9 @@ import {
   ModalContent,
   ModalFooter,
   useDisclosure,
+  Wrap,
+  WrapItem,
+  Center,
 } from "@chakra-ui/react";
 import { CannyWidget } from "../../../lib/components/CannyWidget";
 import { useRouter } from "next/dist/client/router";
@@ -52,6 +55,9 @@ const BountyPrograms: NextPage = () => {
     return <></>;
   }
 
+  console.log("DESCRIPTION", bountyProgram.customDescription);
+  console.log("TITLE", bountyProgram.customTitle);
+
   return (
     <Box width="100%">
       <Box
@@ -60,28 +66,57 @@ const BountyPrograms: NextPage = () => {
         padding="15px"
         borderRadius="4px"
       >
-        <Heading fontSize="lg" fontFamily="mono">
-          🕵️‍♀️ {bountyProgram.name} Bounty Question Proposals
-        </Heading>
-        <Text fontFamily="mono" fontSize="sm">
-          <br />A space to propose and gather questions relevant to{" "}
-          {bountyProgram.name}. What do you want to know about{" "}
-          {bountyProgram.name}? Questions defined, and ranked here will form the
-          basis of future Analytics Bounties by MetricsDAO!
-          <br />
-          <br />
-          See a question you want answered? Upvote it! 
-        </Text>
-        <Button
-          marginTop="15px"
-          variant="secondary"
-          onClick={() => {
-            mixpanel.track("click:bounty_question_tips");
-            onOpen();
-          }}
-        >
-          🤔 How to Write a Good Question (click me to learn) 🤔
-        </Button>
+        {bountyProgram.customTitle == undefined ? (
+          <Heading fontSize="lg" fontFamily="mono">
+            🕵️‍♀️ {bountyProgram.name} Bounty Question Proposals
+          </Heading>
+        ) : (
+          <Heading fontSize="lg" fontFamily="mono">
+            🕵️‍♀️ {bountyProgram.customTitle}
+          </Heading>
+        )}
+        {bountyProgram.customDescription == undefined ? (
+          <Text fontFamily="mono" fontSize="sm">
+            <br />A space to propose and gather questions relevant to{" "}
+            {bountyProgram.name}. What do you want to know about{" "}
+            {bountyProgram.name}? Questions defined, and ranked here will form
+            the basis of future Analytics Bounties by MetricsDAO!
+            <br />
+            <br />
+            See a question you want answered? Upvote it!
+          </Text>
+        ) : (
+          <Text fontFamily="mono" fontSize="sm">
+            <br />
+            {bountyProgram.customDescription}
+          </Text>
+        )}
+        {bountyProgram.customHint == undefined ? (
+          <WrapItem>
+            <Button
+              fontSize={["xs", "sm"]}
+              marginTop="15px"
+              variant="secondary"
+              onClick={() => {
+                mixpanel.track("click:bounty_question_tips");
+                onOpen();
+              }}
+            >
+              🤔 How to Write a Good Question (click me to learn) 🤔
+            </Button>
+          </WrapItem>
+        ) : (
+          <Button
+            marginTop="15px"
+            variant="secondary"
+            onClick={() => {
+              mixpanel.track("click:bounty_question_tips");
+              onOpen();
+            }}
+          >
+            {bountyProgram.customHint}
+          </Button>
+        )}
       </Box>
       <Box>
         {counter != 1 && (
