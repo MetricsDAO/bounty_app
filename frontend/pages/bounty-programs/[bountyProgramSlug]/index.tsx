@@ -101,16 +101,19 @@ const BountyPrograms: NextPage = () => {
             </Button>
           </WrapItem>
         ) : (
-          <Button
-            marginTop="15px"
-            variant="secondary"
-            onClick={() => {
-              mixpanel.track("click:bounty_question_tips");
-              onOpen();
-            }}
-          >
-            {bountyProgram.customHint}
-          </Button>
+          <WrapItem>
+            <Button
+              fontSize={["xs", "sm"]}
+              marginTop="15px"
+              variant="secondary"
+              onClick={() => {
+                mixpanel.track("click:bounty_question_tips");
+                onOpen();
+              }}
+            >
+              {bountyProgram.customHint}
+            </Button>
+          </WrapItem>
         )}
       </Box>
       <Box>
