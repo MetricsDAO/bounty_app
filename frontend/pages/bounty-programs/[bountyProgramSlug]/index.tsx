@@ -12,9 +12,7 @@ import {
   ModalContent,
   ModalFooter,
   useDisclosure,
-  Wrap,
   WrapItem,
-  Center,
 } from "@chakra-ui/react";
 import { CannyWidget } from "../../../lib/components/CannyWidget";
 import { useRouter } from "next/dist/client/router";
@@ -54,9 +52,6 @@ const BountyPrograms: NextPage = () => {
     window.location.assign("/");
     return <></>;
   }
-
-  console.log("DESCRIPTION", bountyProgram.customDescription);
-  console.log("TITLE", bountyProgram.customTitle);
 
   return (
     <Box width="100%">
