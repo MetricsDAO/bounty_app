@@ -81,12 +81,19 @@ const BountyPrograms: NextPage = () => {
             See a question you want answered? Upvote it!
           </Text>
         ) : (
-          <Text fontFamily="mono" fontSize="sm">
+          <Text
+            whiteSpace="pre-line"
+            id="customDescription"
+            fontFamily="mono"
+            fontSize="sm"
+          >
             <br />
             {bountyProgram.customDescription}
           </Text>
         )}
-        {bountyProgram.customHint == undefined ? (
+        {bountyProgram.customHint == undefined &&
+        (bountyProgram.disableHint == undefined ||
+          bountyProgram.disableHint == false) ? (
           <WrapItem>
             <Button
               fontSize={["xs", "sm"]}
@@ -101,19 +108,23 @@ const BountyPrograms: NextPage = () => {
             </Button>
           </WrapItem>
         ) : (
-          <WrapItem>
-            <Button
-              fontSize={["xs", "sm"]}
-              marginTop="15px"
-              variant="secondary"
-              onClick={() => {
-                mixpanel.track("click:bounty_question_tips");
-                onOpen();
-              }}
-            >
-              {bountyProgram.customHint}
-            </Button>
-          </WrapItem>
+          (bountyProgram.disableHint == undefined ||
+            bountyProgram.disableHint == false) && (
+            <WrapItem>
+              <Button
+                fontSize={["xs", "sm"]}
+                marginTop="15px"
+                variant="secondary"
+                onClick={() => {
+                  bountyProgram.hintLink
+                    ? window.open(bountyProgram.hintLink)
+                    : onOpen();
+                }}
+              >
+                {bountyProgram.customHint}
+              </Button>
+            </WrapItem>
+          )
         )}
       </Box>
       <Box>
