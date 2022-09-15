@@ -4,6 +4,11 @@ export interface BountyProgram {
   name: string;
   slug: string;
   bountyProgramID: string;
+  customTitle?: string;
+  customDescription?: string;
+  customHint?: string;
+  hintLink?: string;
+  disableHint?: boolean;
 }
 export interface BountyProgramState {
   programs: BountyProgram[];
@@ -12,7 +17,6 @@ export interface BountyProgramState {
 }
 
 const programs = [
-  
   {
     name: "Aave v3",
     slug: "aave-v3",
@@ -37,7 +41,16 @@ const programs = [
     name: "Goldfinch",
     slug: "goldfinch",
     bountyProgramID: "c1af1118-3163-a6b3-4b67-fc73ef7ff008",
-  }
+  },
+  {
+    name: "Report Plagiarism",
+    slug: "report-submission",
+    bountyProgramID: "49927eef-fe6e-c39b-f1e6-012ab4bb9a2d",
+    customTitle: "Report Plagiarized Submissions",
+    customDescription:
+      "Is your work plagiarized by another analyst? Please use the form below and report them.",
+    disableHint: true,
+  },
 ];
 
 export const useBountyProgramStore = create<BountyProgramState>((set: any) => ({
