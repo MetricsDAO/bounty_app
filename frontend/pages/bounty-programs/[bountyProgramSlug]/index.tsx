@@ -94,36 +94,43 @@ const BountyPrograms: NextPage = () => {
         {bountyProgram.customHint == undefined &&
         (bountyProgram.disableHint == undefined ||
           bountyProgram.disableHint == false) ? (
-          <WrapItem>
+          <Button
+            height="auto"
+            width="100%"
+            whiteSpace="normal"
+            overflowWrap="break-word"
+            fontSize={["sm"]}
+            marginTop="15px"
+            variant="secondary"
+            onClick={() => {
+              mixpanel.track("click:bounty_question_tips");
+              onOpen();
+            }}
+          >
+            <Text padding={2}>
+              🤔 How to Write a Good Question (click me to learn) 🤔{" "}
+            </Text>
+          </Button>
+        ) : (
+          // </WrapItem>
+          (bountyProgram.disableHint == undefined ||
+            bountyProgram.disableHint == false) && (
             <Button
-              fontSize={["xs", "sm"]}
+              height="auto"
+              width="100%"
+              whiteSpace="normal"
+              overflowWrap="break-word"
+              fontSize={["sm"]}
               marginTop="15px"
               variant="secondary"
               onClick={() => {
-                mixpanel.track("click:bounty_question_tips");
-                onOpen();
+                bountyProgram.hintLink
+                  ? window.open(bountyProgram.hintLink)
+                  : onOpen();
               }}
             >
-              🤔 How to Write a Good Question (click me to learn) 🤔
+              <Text padding={2}>{bountyProgram.customHint}</Text>
             </Button>
-          </WrapItem>
-        ) : (
-          (bountyProgram.disableHint == undefined ||
-            bountyProgram.disableHint == false) && (
-            <WrapItem>
-              <Button
-                fontSize={["xs", "sm"]}
-                marginTop="15px"
-                variant="secondary"
-                onClick={() => {
-                  bountyProgram.hintLink
-                    ? window.open(bountyProgram.hintLink)
-                    : onOpen();
-                }}
-              >
-                {bountyProgram.customHint}
-              </Button>
-            </WrapItem>
           )
         )}
       </Box>
