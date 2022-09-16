@@ -12,7 +12,6 @@ import {
   ModalContent,
   ModalFooter,
   useDisclosure,
-  WrapItem,
 } from "@chakra-ui/react";
 import { CannyWidget } from "../../../lib/components/CannyWidget";
 import { useRouter } from "next/dist/client/router";
@@ -112,7 +111,6 @@ const BountyPrograms: NextPage = () => {
             </Text>
           </Button>
         ) : (
-          // </WrapItem>
           (bountyProgram.disableHint == undefined ||
             bountyProgram.disableHint == false) && (
             <Button
