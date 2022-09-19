@@ -12,7 +12,6 @@ import {
   ModalContent,
   ModalFooter,
   useDisclosure,
-  WrapItem,
 } from "@chakra-ui/react";
 import { CannyWidget } from "../../../lib/components/CannyWidget";
 import { useRouter } from "next/dist/client/router";
@@ -94,36 +93,42 @@ const BountyPrograms: NextPage = () => {
         {bountyProgram.customHint == undefined &&
         (bountyProgram.disableHint == undefined ||
           bountyProgram.disableHint == false) ? (
-          <WrapItem>
-            <Button
-              fontSize={["xs", "sm"]}
-              marginTop="15px"
-              variant="secondary"
-              onClick={() => {
-                mixpanel.track("click:bounty_question_tips");
-                onOpen();
-              }}
-            >
-              🤔 How to Write a Good Question (click me to learn) 🤔
-            </Button>
-          </WrapItem>
+          <Button
+            height="auto"
+            width="100%"
+            whiteSpace="normal"
+            overflowWrap="break-word"
+            fontSize={["sm"]}
+            marginTop="15px"
+            variant="secondary"
+            onClick={() => {
+              mixpanel.track("click:bounty_question_tips");
+              onOpen();
+            }}
+          >
+            <Text padding={2}>
+              🤔 How to Write a Good Question (click me to learn) 🤔{" "}
+            </Text>
+          </Button>
         ) : (
           (bountyProgram.disableHint == undefined ||
             bountyProgram.disableHint == false) && (
-            <WrapItem>
-              <Button
-                fontSize={["xs", "sm"]}
-                marginTop="15px"
-                variant="secondary"
-                onClick={() => {
-                  bountyProgram.hintLink
-                    ? window.open(bountyProgram.hintLink)
-                    : onOpen();
-                }}
-              >
-                {bountyProgram.customHint}
-              </Button>
-            </WrapItem>
+            <Button
+              height="auto"
+              width="100%"
+              whiteSpace="normal"
+              overflowWrap="break-word"
+              fontSize={["sm"]}
+              marginTop="15px"
+              variant="secondary"
+              onClick={() => {
+                bountyProgram.hintLink
+                  ? window.open(bountyProgram.hintLink)
+                  : onOpen();
+              }}
+            >
+              <Text padding={2}>{bountyProgram.customHint}</Text>
+            </Button>
           )
         )}
       </Box>
