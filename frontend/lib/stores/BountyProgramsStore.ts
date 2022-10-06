@@ -18,6 +18,11 @@ export interface BountyProgramState {
 
 const programs = [
   {
+    name: "Sushiswap",
+    slug: "sushiswap",
+    bountyProgramID: "dda4603f-a4c0-aaad-d158-4de1a621451a",
+  },
+  {
     name: "Aave v3",
     slug: "aave-v3",
     bountyProgramID: "9f550aff-5d3e-053a-8034-33df6573d9cd",
