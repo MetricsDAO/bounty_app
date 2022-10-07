@@ -48,6 +48,15 @@ const programs = [
     bountyProgramID: "c1af1118-3163-a6b3-4b67-fc73ef7ff008",
   },
   {
+    name: "Web3 Data Glossary",
+    slug: "web3-data-glossary",
+    bountyProgramID: "dd79c6b5-f43a-54a1-8c4e-99f9c5dae517",
+    customDescription: "Hey there web3 data analysts! \n We’re working with industry partners to come up with shared definitions around key web3 data concepts. \n And we are calling on you for help! \nShare web3 data terms you want to see in the glossary in this thread and earn xMETRIC.",
+    customHint: "Click here to learn more",
+    hintLink:"https://metricsdao.notion.site/Web3-Data-Glossary-750546b7d18447f39ac145f8e9532f4f"
+  },
+  
+  {
     name: "Report Plagiarism",
     slug: "report-submission",
     bountyProgramID: "49927eef-fe6e-c39b-f1e6-012ab4bb9a2d",
