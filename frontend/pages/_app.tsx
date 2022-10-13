@@ -47,6 +47,10 @@ function MyApp({ Component, pageProps }) {
               <meta property="og:type" content="website" />
               <meta property="og:title" content="Metrics DAO" />
               <meta property="og:description" content={description} />
+              <meta
+                name="og:image"
+                content="https://bounty.metricsdao.xyz/social/twitter/metricsdao_banner.png"
+              />
               <meta name="twitter:card" content="summary_large_image" />
               <meta property="twitter:domain" content="metricsdao.xyz" />
               <meta property="twitter:url" content="https://metricsdao.xyz" />
