@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }) {
               <meta property="og:description" content={description} />
               <meta
                 name="og:image"
-                content="https://bounty.metricsdao.xyz/social/twitter/metricsdao_banner.png"
+                content="https://bounty.metricsdao.xyz/social/twitter/social.png"
               />
               <meta name="twitter:card" content="summary_large_image" />
               <meta property="twitter:domain" content="metricsdao.xyz" />
@@ -58,7 +58,7 @@ function MyApp({ Component, pageProps }) {
               <meta name="twitter:description" content={description} />
               <meta
                 name="twitter:image"
-                content="https://bounty.metricsdao.xyz/social/twitter/metricsdao_banner.png"
+                content="https://bounty.metricsdao.xyz/social/twitter/social.png"
               />
               <link rel="icon" href="/logos/color-mark@2x.png" />
               <script
