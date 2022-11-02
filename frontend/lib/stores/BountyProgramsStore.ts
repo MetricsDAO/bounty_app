@@ -18,9 +18,14 @@ export interface BountyProgramState {
 
 const programs = [
   {
-    name: "NEAR",
+    name: "NEAR Protocol",
     slug: "near",
     bountyProgramID: "fad867cb-c0d2-79ce-c961-906062903f45",
+  },
+  {
+    name: "In the News",
+    slug: "in-the-news",
+    bountyProgramID: "53ddfcc2-3921-41bc-b961-a77ec14efa94",
   },
   {
     name: "Sushiswap",
