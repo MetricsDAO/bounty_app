@@ -24,7 +24,7 @@ const programs = [
   },
   {
     name: "In the News",
-    slug: "near",
+    slug: "in-the-news",
     bountyProgramID: "53ddfcc2-3921-41bc-b961-a77ec14efa94",
   },
   {
