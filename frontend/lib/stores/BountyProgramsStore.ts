@@ -17,15 +17,25 @@ export interface BountyProgramState {
 }
 
 const programs = [
+  
+  {
+    name: "In the News",
+    slug: "in-the-news",
+    bountyProgramID: "53ddfcc2-3921-41bc-b961-a77ec14efa94",
+  },
   {
     name: "NEAR Protocol",
     slug: "near",
     bountyProgramID: "fad867cb-c0d2-79ce-c961-906062903f45",
   },
   {
-    name: "In the News",
-    slug: "in-the-news",
-    bountyProgramID: "53ddfcc2-3921-41bc-b961-a77ec14efa94",
+    name: "Web3 Data Dictionary",
+    slug: "web3-data-glossary",
+    bountyProgramID: "dd79c6b5-f43a-54a1-8c4e-99f9c5dae517",
+    customTitle: "Web3 Data Dictionary",
+    customDescription: "Hey there web3 data analysts! \n We’re working with industry partners to come up with shared definitions around key web3 data concepts. \n And we are calling on you for help! \nShare web3 data terms you want to see in the glossary in this thread and earn xMETRIC.",
+    customHint: "Click here to learn more",
+    hintLink:"https://metricsdao.notion.site/Web3-Data-Glossary-750546b7d18447f39ac145f8e9532f4f"
   },
   {
     name: "Sushiswap",
@@ -56,15 +66,6 @@ const programs = [
     name: "Goldfinch",
     slug: "goldfinch",
     bountyProgramID: "c1af1118-3163-a6b3-4b67-fc73ef7ff008",
-  },
-  {
-    name: "Web3 Data Glossary",
-    slug: "web3-data-glossary",
-    bountyProgramID: "dd79c6b5-f43a-54a1-8c4e-99f9c5dae517",
-    customTitle: "Web3 Data Glossary",
-    customDescription: "Hey there web3 data analysts! \n We’re working with industry partners to come up with shared definitions around key web3 data concepts. \n And we are calling on you for help! \nShare web3 data terms you want to see in the glossary in this thread and earn xMETRIC.",
-    customHint: "Click here to learn more",
-    hintLink:"https://metricsdao.notion.site/Web3-Data-Glossary-750546b7d18447f39ac145f8e9532f4f"
   },
   
   {
