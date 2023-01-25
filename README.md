@@ -12,4 +12,4 @@ This an application for submitting and upvoting questions for the MetricsDAO.
 ## Architecture
 
 1. `api/` - FastAPI (python)
-2. `frontend/` - Next.js React/Typescript application
+2. `frontend/` - Next.js React/Typescript application 
