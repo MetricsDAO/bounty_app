@@ -24,6 +24,11 @@ const programs = [
     bountyProgramID: "53ddfcc2-3921-41bc-b961-a77ec14efa94",
   },
   {
+    name: "MetricsDAO",
+    slug: "metricsdao",
+    bountyProgramID: "095349d5-3bdf-3a98-1d1f-59e3a526b76b",
+  },
+  {
     name: "NEAR Protocol",
     slug: "near",
     bountyProgramID: "fad867cb-c0d2-79ce-c961-906062903f45",
