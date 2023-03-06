@@ -17,12 +17,18 @@ export interface BountyProgramState {
 }
 
 const programs = [
-  
+  {
+    name: "Season 3 Community Brainstorming",
+    slug: "season-3-community-brainstorming",
+    bountyProgramID: "c90c96f0-1171-9754-cbb5-773e547a38ba",
+  },
   {
     name: "In the News",
     slug: "in-the-news",
     bountyProgramID: "53ddfcc2-3921-41bc-b961-a77ec14efa94",
   },
+  
+  
   {
     name: "MetricsDAO",
     slug: "metricsdao",
